@@ -28,8 +28,248 @@ To install on Ubuntu, follow the steps given in the installation guide. For conv
 		[guest_box...]# exit
 		...]# vagrant reload
 
-(6) Done!  
+(6) (ALMOST) Done!  
+
+(7) I, personally, need to go through the errors to figure them out.
 
 Posting a log of my output below:
+
+timm@puppetDemo:~/Documents/VistA/Scripts/Install/Ubuntu$ vagrant reload
+[OSEHRA VistA - Ubuntu] Attempting graceful shutdown of VM...
+[OSEHRA VistA - Ubuntu] Clearing any previously set forwarded ports...
+[OSEHRA VistA - Ubuntu] Fixed port collision for 22 => 2222. Now on port 2200.
+[OSEHRA VistA - Ubuntu] Clearing any previously set network interfaces...
+[OSEHRA VistA - Ubuntu] Preparing network interfaces based on configuration...
+[OSEHRA VistA - Ubuntu] Forwarding ports...
+[OSEHRA VistA - Ubuntu] -- 22 => 2200 (adapter 1)
+[OSEHRA VistA - Ubuntu] -- 9430 => 9430 (adapter 1)
+[OSEHRA VistA - Ubuntu] -- 8001 => 8001 (adapter 1)
+[OSEHRA VistA - Ubuntu] -- 8080 => 8080 (adapter 1)
+[OSEHRA VistA - Ubuntu] -- 8000 => 8000 (adapter 1)
+[OSEHRA VistA - Ubuntu] -- 8081 => 8081 (adapter 1)
+[OSEHRA VistA - Ubuntu] Booting VM...
+[OSEHRA VistA - Ubuntu] Waiting for machine to boot. This may take a few minutes...
+[OSEHRA VistA - Ubuntu] Machine booted and ready!
+GuestAdditions 4.3.10 running --- OK.
+[OSEHRA VistA - Ubuntu] Mounting shared folders...
+[OSEHRA VistA - Ubuntu] -- /vagrant
+[OSEHRA VistA - Ubuntu] Running provisioner: shell...
+[OSEHRA VistA - Ubuntu] Running: /tmp/vagrant-shell20150304-25673-6j17tm
+stdin: is not a tty
+Using https://github.com/OSEHRA/VistA-M.git for routines and globals
+Create development directories: true
+Installing an instance named: osehra
+Installing EWD.js: true
+Post install hook: false
+Skip Testing: false
+This script will add vagrant to the VistA group
+Updating operating system
+Extracting templates from packages: 100%
+
+Creating config file /etc/gconf/2/path with new version
+mysql start/running, process 13101
+Downloading gtminstall
+Current shared memory maximum is less than 64MB
+Current shmmax is:  33554432
+Setting shared memory maximum to 64MB
+kernel.shmmax = 67108864
+Done installing GT.M
+Creating osehra...
+ Adding system startup for /etc/init.d/osehravista ...
+   /etc/rc0.d/K20osehravista -> ../init.d/osehravista
+   /etc/rc1.d/K20osehravista -> ../init.d/osehravista
+   /etc/rc6.d/K20osehravista -> ../init.d/osehravista
+   /etc/rc2.d/S20osehravista -> ../init.d/osehravista
+   /etc/rc3.d/S20osehravista -> ../init.d/osehravista
+   /etc/rc4.d/S20osehravista -> ../init.d/osehravista
+   /etc/rc5.d/S20osehravista -> ../init.d/osehravista
+Creating databases
+Done Creating databases
+VistA instance osehra created!
+Cloning into 'VistA-M'...
+Checking out files: 100% (32286/32286), done.
+Dashboard script configuration:
+  CTEST_SITE=[nADDckZk.vagrant]
+  CTEST_BUILD_NAME=[Ubuntu12.04-GTMV6.0-002_x86]
+  CTEST_SOURCE_DIRECTORY=[/home/osehra/Dashboard/VistA]
+  CTEST_BINARY_DIRECTORY=[/home/osehra/Dashboard/VistA-build]
+  CTEST_CMAKE_GENERATOR=[Unix Makefiles]
+  CTEST_BUILD_CONFIGURATION=[Debug]
+  CTEST_GIT_COMMAND=[/usr/bin/git]
+  CTEST_CHECKOUT_COMMAND=["/usr/bin/cmake" -P "/home/osehra/Dashboard/VistA-init.cmake"]
+  CTEST_CONFIGURE_COMMAND=[]
+  CTEST_SCRIPT_DIRECTORY=[/vagrant/Ubuntu]
+  CTEST_USE_LAUNCHERS=[1]
+  dashboard_M_dir=[/home/osehra/Dashboard/VistA-M]
+
+
+Clearing build tree...
+Run dashboard with model Experimental
+   Source directory: /home/osehra/Dashboard/VistA
+   Build directory: /home/osehra/Dashboard/VistA-build
+   First perform the initial checkout: "/usr/bin/cmake" -P "/home/osehra/Dashboard/VistA-init.cmake"
+   Perform checkout in directory: /home/osehra/Dashboard
+   Reading ctest configuration file: /home/osehra/Dashboard/VistA/CTestConfig.cmake
+   Site: nADDckZk.vagrant
+   Build name: Ubuntu12.04-GTMV6.0-002_x86
+   Use Experimental tag: 20150304-2015
+Starting fresh build...
+   Updating the repository: /home/osehra/Dashboard/VistA-M
+   Use GIT repository type
+   Old revision of repository is: 7586a9e466362fb0f0c313f2d7b2739413470e9a
+   New revision of repository is: 7586a9e466362fb0f0c313f2d7b2739413470e9a
+   Gathering version information (one . per revision):
+    
+   Updating the repository: /home/osehra/Dashboard/VistA
+   Use GIT repository type
+   Old revision of repository is: 8fb7231cc07b926bc82204b8fcd6890c8bb3acdd
+   New revision of repository is: 8fb7231cc07b926bc82204b8fcd6890c8bb3acdd
+   Gathering version information (one . per revision):
+    
+Found 0 changed files
+Configure project
+   Each . represents 1024 bytes of output
+    . Size of output: 0K
+Build project
+   Each symbol represents 1024 bytes of output.
+    . Size of output: 1K
+   0 Compiler errors
+   0 Compiler warnings
+Test project /home/osehra/Dashboard/VistA-build
+      Start  1: PYTHON_GTMRoutinesParser
+ 1/10 Test  #1: PYTHON_GTMRoutinesParser .............   Passed    0.05 sec
+      Start  2: PYTHON_PrefixParser
+ 2/10 Test  #2: PYTHON_PrefixParser ..................   Passed    0.02 sec
+      Start  3: PyUnitTest_TestVistATestClient
+ 3/10 Test  #3: PyUnitTest_TestVistATestClient .......   Passed    1.08 sec
+      Start  4: PyUnitTest_TestSSEP
+ 4/10 Test  #4: PyUnitTest_TestSSEP ..................***Failed  Error regular expression found in output. Regex=[FAILED] 29.79 sec
+      Start  5: PyUnitTest_TestPatchOrderGenerator
+ 5/10 Test  #5: PyUnitTest_TestPatchOrderGenerator ...   Passed   15.43 sec
+      Start  6: PYTHON_MenuTraversal
+ 6/10 Test  #6: PYTHON_MenuTraversal .................   Passed    3.49 sec
+      Start  7: RAS_PLMain01_test
+ 7/10 Test  #7: RAS_PLMain01_test ....................***Failed   25.62 sec
+      Start  8: RASUnitTest_UTZTMGRSET
+ 8/10 Test  #8: RASUnitTest_UTZTMGRSET ...............   Passed    3.97 sec
+      Start  9: RAS_SCMain01_test
+ 9/10 Test  #9: RAS_SCMain01_test ....................   Passed   55.92 sec
+      Start 10: RAS_REGMain01_test
+10/10 Test #10: RAS_REGMain01_test ...................***Failed   92.89 sec
+
+70% tests passed, 3 tests failed out of 10
+
+Total Test time (real) = 228.28 sec
+
+The following tests FAILED:
+	  4 - PyUnitTest_TestSSEP (Failed)
+	  7 - RAS_PLMain01_test (Failed)
+	 10 - RAS_REGMain01_test (Failed)
+	Add file: /vagrant/Ubuntu/test.cmake
+	Add file: /usr/local/src/VistA-Dashboard/vista_common.cmake
+	Add file: /home/osehra/Dashboard/VistA-build/Testing/Temporary/UpdateMComponents.log
+Submit files (using http)
+   Using HTTP submit method
+   Drop site:http://code.osehra.org/CDash/submit.php?project=Open+Source+EHR
+   Uploaded: /home/osehra/Dashboard/VistA-build/Testing/20150304-2015/Build.xml
+   Uploaded: /home/osehra/Dashboard/VistA-build/Testing/20150304-2015/Configure.xml
+   Uploaded: /home/osehra/Dashboard/VistA-build/Testing/20150304-2015/Notes.xml
+   Uploaded: /home/osehra/Dashboard/VistA-build/Testing/20150304-2015/Test.xml
+   Uploaded: /home/osehra/Dashboard/VistA-build/Testing/20150304-2015/Update.xml
+   Submission successful
+Your build id is: nADDckZk you will need this to identify your build on the VistA dashboard
+%GTM-I-JNLCREATE, Journal file /home/osehra/j/osehra.mjl created for database file /home/osehra/g/osehra.dat with BEFORE_IMAGES
+%GTM-I-JNLSTATE, Journaling state for database file /home/osehra/g/osehra.dat is now ON
+xinetd stop/waiting
+xinetd start/running, process 19191
+Installing ewd.js
+Downloading NVM installer
+Done downloading NVM installer
+=> Downloading nvm from git to '/home/osehra/.nvm'
+=> Cloning into '/home/osehra/.nvm'...
+######################################################################## 100.0%
+Now using node v0.10.36
+0.10
+default -> 0.10 (-> v0.10.36)
+Now using node v0.10.36
+Now using node v0.10.36
+Now using node v0.10.36
+
+fs.js:654
+  return binding.mkdir(pathModule._makeLong(path),
+                 ^
+Error: ENOENT, no such file or directory 'exit/ssl'
+    at Object.fs.mkdirSync (fs.js:654:18)
+    at installEWD (/home/osehra/ewdjs/node_modules/ewdjs/essentials/install.js:149:35)
+    at /home/osehra/ewdjs/node_modules/ewdjs/essentials/install.js:279:3
+    at Interface._onLine (readline.js:201:5)
+    at Interface.<anonymous> (readline.js:323:12)
+    at Array.forEach (native)
+    at Interface._normalWrite (readline.js:322:11)
+    at Socket.ondata (readline.js:92:10)
+    at Socket.emit (events.js:95:17)
+    at Socket.<anonymous> (_stream_readable.js:765:14)
+
+npm ERR! ewdjs@0.98.3 postinstall: `node essentials/install`
+npm ERR! Exit status 8
+npm ERR! 
+npm ERR! Failed at the ewdjs@0.98.3 postinstall script.
+npm ERR! This is most likely a problem with the ewdjs package,
+npm ERR! not with npm itself.
+npm ERR! Tell the author that this fails on your system:
+npm ERR!     node essentials/install
+npm ERR! You can get their info via:
+npm ERR!     npm owner ls ewdjs
+npm ERR! There is likely additional logging output above.
+npm ERR! System Linux 3.2.0-77-virtual
+npm ERR! command "/home/osehra/.nvm/v0.10.36/bin/node" "/home/osehra/.nvm/v0.10.36/bin/npm" "install" "--quiet" "ewdjs"
+npm ERR! cwd /home/osehra/ewdjs
+npm ERR! node -v v0.10.36
+npm ERR! npm -v 1.4.28
+npm ERR! code ELIFECYCLE
+npm ERR! not ok code 0
+Now using node v0.10.36
+Now using node v0.10.36
+Now using node v0.10.36
+find: `/home/osehra/ewdjs/node_modules/ewdjs': No such file or directory
+Now using node v0.10.36
+bash: line 0: cd: /home/osehra/ewdjs/node_modules/ewdjs: No such file or directory
+Can't open /home/osehra/ewdjs/node_modules/ewdjs/OSEHRA/*.js: No such file or directory.
+cp: cannot stat `/home/osehra/ewdjs/node_modules/ewdjs/OSEHRA/*.js': No such file or directory
+Can't open /home/osehra/ewdjs/node_modules/ewdjs/OSEHRA/*.js: No such file or directory.
+cp: cannot stat `/home/osehra/ewdjs/node_modules/ewdjs/OSEHRA/VistATerm.js': No such file or directory
+cp: cannot stat `/home/osehra/ewdjs/node_modules/ewdjs/OSEHRA/VistATerm.js': No such file or directory
+Can't open /home/osehra/ewdjs/VistATerm.js: No such file or directory.
+Can't open /home/osehra/ewdjs/VistATerm.js: No such file or directory.
+cp: cannot stat `/home/osehra/ewdjs/node_modules/ewdjs/OSEHRA/ewdRest.js': No such file or directory
+Can't open /home/osehra/ewdjs/ewdRest.js: No such file or directory.
+cp: cannot stat `/home/osehra/ewdjs/node_modules/ewdjs/OSEHRA/registerWSClient.js': No such file or directory
+Can't open /home/osehra/ewdjs/registerWSClient.js: No such file or directory.
+Now using node v0.10.36
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/osehra/ewdjs/registerWSClient.js'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:929:3
+ Adding system startup for /etc/init.d/osehravista-ewdjs ...
+   /etc/rc0.d/K20osehravista-ewdjs -> ../init.d/osehravista-ewdjs
+   /etc/rc1.d/K20osehravista-ewdjs -> ../init.d/osehravista-ewdjs
+   /etc/rc6.d/K20osehravista-ewdjs -> ../init.d/osehravista-ewdjs
+   /etc/rc2.d/S20osehravista-ewdjs -> ../init.d/osehravista-ewdjs
+   /etc/rc3.d/S20osehravista-ewdjs -> ../init.d/osehravista-ewdjs
+   /etc/rc4.d/S20osehravista-ewdjs -> ../init.d/osehravista-ewdjs
+   /etc/rc5.d/S20osehravista-ewdjs -> ../init.d/osehravista-ewdjs
+Done installing EWD.js
+Starting EWD.js
+Now using node v0.10.36
+Starting EWD.js Rest Server
+Now using node v0.10.36
+Starting EWD VistA Term Server
+Now using node v0.10.36
 
 		
